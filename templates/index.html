@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  <title> Controller Template </title>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="arrow-key-container">
+      <div class="arrow-key"></div>
+      <div class="arrow-key">
+        <a href="/Up">
+          <button class="btn">
+            <img class="btn-img up-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="up">
+          </button>
+        </a>
+      </div>
+      <div class="arrow-key"></div>
+      <div class="arrow-key">
+        <a href="/Left">
+          <button class="btn">
+            <img class="btn-img left-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="left">
+          </button>
+        </a>
+      </div>
+      <div class="arrow-key"></div>
+      <div class="arrow-key">
+        <a href="/Right">
+          <button class="btn">
+            <img class="btn-img right-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="right">
+          </button>
+        </a>
+      </div>
+      <div class="arrow-key"></div>
+      <div class="arrow-key">
+        <a href="/Down">
+          <button class="btn">
+            <img class="btn-img down-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="down">
+          </button>
+        </a>
+      </div>
+      <div class="arrow-key"></div>
+    </div>
+    <div class="screen-container">
+      <!-- change the following iframe to your camera feed -->
+      <iframe width="632" height="355" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+
+</html>

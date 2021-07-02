@@ -1,0 +1,27 @@
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.arrow-key-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.btn-img{
+  width: 75px;
+  height: 75px;
+}
+
+/* the arrows all use the same img, the following css just rotates the image accordingly */
+.left-btn{
+  transform: rotate(-90deg);
+}
+
+.right-btn{
+  transform: rotate(90deg);
+}
+
+.down-btn{
+  transform: rotate(180deg);
+}
