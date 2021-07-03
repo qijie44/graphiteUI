@@ -4,8 +4,7 @@
 <p>
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+<details open="open"> <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -57,6 +56,7 @@ python3 -m pip install flask
    git clone https://github.com/qijie44/flaskcontroller.git
    ```
 2. Modify the template for your project
+3. Run index_page.py script and direct your browser to Rpi's_IP_ADDRESS:5000 to see the page
 
 <!-- LICENSE -->
 ## License
@@ -65,6 +65,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
-If you are using this, you are most likely a M&T student and know where to find me.
+If you are using this, just head down to the lab if you got any questions
 
-Project Link: [https://github.com/qijie44/flaskcontroller](https://github.com/qijie44/flaskcontroller)
+Project Link: [https://github.com/makingandtinkering/flaskcontroller](https://github.com/makingandtinkering/flaskcontroller)
