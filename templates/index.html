@@ -10,39 +10,39 @@
 <body>
   <div class="grid-container">
     <div class="arrow-key-container">
-      <div class="arrow-key"></div>
-      <div class="arrow-key">
-        <a href="/Up">
-          <button class="btn">
-            <img class="btn-img up-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="up">
-          </button>
-        </a>
+      <div></div>
+      <div>
+        <button class="btn up-btn">
+          <a href=# id=up class=command>
+            <img class="btn-img" src="{{url_for('static', filename="images/triangle.png")}}" alt="up">
+          </a>
+        </button>
       </div>
-      <div class="arrow-key"></div>
-      <div class="arrow-key">
-        <a href="/Left">
-          <button class="btn">
-            <img class="btn-img left-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="left">
-          </button>
-        </a>
+      <div></div>
+      <div>
+        <button class="btn left-btn">
+          <a href=# id=left class=command>
+            <img class="btn-img left-arrow" src="{{url_for('static', filename="images/triangle.png")}}" alt="left">
+          </a>
+        </button>
       </div>
-      <div class="arrow-key"></div>
-      <div class="arrow-key">
-        <a href="/Right">
-          <button class="btn">
-            <img class="btn-img right-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="right">
-          </button>
-        </a>
+      <div></div>
+      <div>
+        <button class="btn right-btn">
+          <a href=# id=right class=command>
+            <img class="btn-img right-arrow" src="{{url_for('static', filename="images/triangle.png")}}" alt="right">
+          </a>
+        </button>
       </div>
-      <div class="arrow-key"></div>
-      <div class="arrow-key">
-        <a href="/Down">
-          <button class="btn">
-            <img class="btn-img down-btn" src="{{url_for('static', filename="images/triangle.png")}}" alt="down">
-          </button>
-        </a>
+      <div></div>
+      <div>
+        <button class="btn down-btn">
+          <a href=# id=down class=command>
+            <img class="btn-img down-arrow" src="{{url_for('static', filename="images/triangle.png")}}" alt="down">
+          </a>
+        </button>
       </div>
-      <div class="arrow-key"></div>
+      <div></div>
     </div>
     <div class="screen-container">
       <!-- change the following iframe to your camera feed -->
@@ -50,6 +50,24 @@
         allowfullscreen></iframe>
     </div>
   </div>
+  <p>
+    Command received: <h1 id=received-command></h1>
+  </p>
 </body>
+
+<!-- prompt the browser to download jQuery from Google's CDN -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- if unable to access Google's CDN, find the library internally -->
+<script>
+  window.jQuery || document.write('<script src="{{url_for('static', filename = 'javascript/jquery.js')}}">\x3C/script>')
+</script>
+
+<!-- setting the root of the application -->
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{request.script_root | tojson}};
+</script>
+
+<!-- loading our own js file -->
+<script src="{{url_for('static', filename = 'javascript/index.js')}}" charset="utf-8"></script>
 
 </html>

@@ -14,14 +14,14 @@
 }
 
 /* the arrows all use the same img, the following css just rotates the image accordingly */
-.left-btn{
+.left-arrow{
   transform: rotate(-90deg);
 }
 
-.right-btn{
+.right-arrow{
   transform: rotate(90deg);
 }
 
-.down-btn{
+.down-arrow{
   transform: rotate(180deg);
 }
