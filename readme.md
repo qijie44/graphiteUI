@@ -28,15 +28,16 @@
 ## About The Project
 
 This is a template for remote control of a Rpi. It is built on flask and has corrsponding up/down/left/right buttons and an iframe for you to put your video feed in.
-This project uses AJAX to remove reloading of the webpage on every input. 
+This project uses AJAX to remove reloading of the webpage on every input. This template was built based on the tutorial (https://flask.palletsprojects.com/en/2.0.x/patterns/jquery/).
 ####IF YOU ARE USING THIS TEMPLATE, DO AT LEAST HAVE SOME FAMILIARITY WITH THE LANGUAGES/LIBRARIES THAT IT WAS BUILT WITH.
 
 ### Built With
 
 * python==3.8.10
-* flask==2.0.1
+* [flask==2.0.1](https://flask.palletsprojects.com/en/2.0.x/)
+* HTML [MDN Documentation](https://developer.mozilla.org/en-US/docs/Learn/HTML)
 * Javascript
-* jQuery 
+* [jQuery]https://jquery.com/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
