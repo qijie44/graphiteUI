@@ -1,27 +1,18 @@
-.grid-container{
-  display: grid;
-  grid-template-columns: auto auto;
+body {
+  background-color: #E2EAEC;
 }
 
-.arrow-key-container{
-  display: grid;
-  grid-template-columns: auto auto auto;
+h1 {
+  font-family: Cambria;font-style: bold;
 }
 
-.btn-img{
-  width: 75px;
-  height: 75px;
+p{
+  display: inline;
 }
 
-/* the arrows all use the same img, the following css just rotates the image accordingly */
-.left-arrow{
-  transform: rotate(-90deg);
-}
-
-.right-arrow{
-  transform: rotate(90deg);
-}
-
-.down-arrow{
-  transform: rotate(180deg);
+.label {
+  border-style: ridge;
+  border-color: #4F77AA;
+  border-width: 3px;
+  background-color: #AAC9DD;
 }

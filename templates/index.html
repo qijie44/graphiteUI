@@ -1,73 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
+<title>Graphite Exfoliation</title>
+
+ <!-- main css stylesheet -->
+ <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
 
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-  <title> Controller Template </title>
+    <h1>Graphite Exfoliation</h1>
 </head>
 
 <body>
-  <div class="grid-container">
-    <div class="arrow-key-container">
-      <div></div>
-      <div>
-        <button class="btn up-btn">
-          <a href=# id=up class=command>
-            <img class="btn-img" src="{{url_for('static', filename="images/triangle.png")}}" alt="up">
-          </a>
-        </button>
-      </div>
-      <div></div>
-      <div>
-        <button class="btn left-btn">
-          <a href=# id=left class=command>
-            <img class="btn-img left-arrow" src="{{url_for('static', filename="images/triangle.png")}}" alt="left">
-          </a>
-        </button>
-      </div>
-      <div></div>
-      <div>
-        <button class="btn right-btn">
-          <a href=# id=right class=command>
-            <img class="btn-img right-arrow" src="{{url_for('static', filename="images/triangle.png")}}" alt="right">
-          </a>
-        </button>
-      </div>
-      <div></div>
-      <div>
-        <button class="btn down-btn">
-          <a href=# id=down class=command>
-            <img class="btn-img down-arrow" src="{{url_for('static', filename="images/triangle.png")}}" alt="down">
-          </a>
-        </button>
-      </div>
-      <div></div>
-    </div>
-    <div class="screen-container">
-      <!-- change the following iframe to your camera feed -->
-      <iframe width="632" height="355" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-  </div>
-  <p>
-    Command received: <h1 id=received-command></h1>
-  </p>
+    <p class="label">Overall Movement Controls</p>
+    <br><br>
+    <button type="button">Start</button>
+    <button type="button">Stop</button>
+    <button type="button">Pause</button>
+    <button type="button">Resume</button><br><br><br>
+
+<div>
+    <p class="label">Exfoliation Controls</p>
+    <br><br>
+
+<p><label for="Exfoliation no."><u><b>Exfoliation no. (Tape)</b></u></label>
+<input type="range" value="4" min="4" max="100" oninput="this.nextElementSibling.value = this.value">
+<output>4</output></p2><br>
+
+<p><label for="Exfoliation no."><u><b>Exfoliation no. (Substrate)</b></u></label>
+<input type="range" value="4" min="4" max="100" oninput="this.nextElementSibling.value = this.value">
+<output>4</output></p3><br><br><br>
+
+    <p class="label">Position on Board</p>
+    <br><br>
+
+ <p><button type="button">Graphite</button>
+ <button type="button">Tape</button><br>
+
+<label for="Substrate no."><u><b>Substrate no.</b></u></label>
+<input type="range" value="1" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
+<output>1</output></p4><br><br><br>
+
+
+    <p class="label">Misc. Controls</p>
+    <br><br>
+
+<p5><label for="Movement speed"><u><b>Movement speed</b></u></label>
+<input type="number" min="0" step="100"></p5><br>
+
+<p6><label for="file"><b><u>Exfoliation Progress</u></b></label>
+
+<progress id="Progress-Bar" min="0" max="100" value="70" > 70% </progress></p6>
+
+</div>
+
 </body>
 
-<!-- prompt the browser to download jQuery from Google's CDN -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- if unable to access Google's CDN, find the library internally -->
-<script>
-  window.jQuery || document.write('<script src="{{url_for('static', filename = 'javascript/jquery.js')}}">\x3C/script>')
-</script>
-
-<!-- setting the root of the application -->
-<script type=text/javascript>
-  $SCRIPT_ROOT = {{request.script_root | tojson}};
-</script>
-
-<!-- loading our own js file -->
-<script src="{{url_for('static', filename = 'javascript/index.js')}}" charset="utf-8"></script>
-
 </html>
+
+
