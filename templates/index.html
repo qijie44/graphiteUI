@@ -12,31 +12,31 @@
 <body>
     <p class="label">Overall Movement Controls</p>
     <br><br>
-    <button type="button">Start</button>
-    <button type="button">Stop</button>
-    <button type="button">Pause</button>
-    <button type="button">Resume</button><br><br><br>
+    <button type="button" id="Start">Start</button>
+    <button type="button" id="Stop">Stop</button>
+    <button type="button" id="Pause">Pause</button>
+    <button type="button" id="Resume">Resume</button><br><br><br>
 
 <div>
     <p class="label">Exfoliation Controls</p>
     <br><br>
 
 <p><label for="Exfoliation no."><u><b>Exfoliation no. (Tape)</b></u></label>
-<input type="range" value="4" min="4" max="100" oninput="this.nextElementSibling.value = this.value">
+<input id="Tape-Exfoliation" type="range" value="4" min="4" max="100" oninput="this.nextElementSibling.value = this.value">
 <output>4</output></p2><br>
 
 <p><label for="Exfoliation no."><u><b>Exfoliation no. (Substrate)</b></u></label>
-<input type="range" value="4" min="4" max="100" oninput="this.nextElementSibling.value = this.value">
+<input id="Substrate-Exfoliation"  type="range" value="4" min="4" max="100" oninput="this.nextElementSibling.value = this.value">
 <output>4</output></p3><br><br><br>
 
     <p class="label">Position on Board</p>
     <br><br>
 
- <p><button type="button">Graphite</button>
- <button type="button">Tape</button><br>
+ <p><button type="button" id="Graphite">Graphite</button>
+ <button type="button" id="Tape">Tape</button><br>
 
 <label for="Substrate no."><u><b>Substrate no.</b></u></label>
-<input type="range" value="1" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
+<input id="Substrate-No" type="range" value="1" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
 <output>1</output></p4><br><br><br>
 
 
@@ -44,7 +44,7 @@
     <br><br>
 
 <p5><label for="Movement speed"><u><b>Movement speed</b></u></label>
-<input type="number" min="0" step="100"></p5><br>
+<input id="Movement-Speed" type="number" min="0" step="100"></p5><br>
 
 <p6><label for="file"><b><u>Exfoliation Progress</u></b></label>
 
@@ -53,6 +53,23 @@
 </div>
 
 </body>
+
+<!-- prompt the browser to download jQuery from Google's CDN -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- if unable to access Google's CDN, find the library internally -->
+<script>
+  window.jQuery || document.write('<script src="{{url_for('static', filename = 'javascript/jquery.js')}}">\x3C/script>')
+</script>
+
+<!-- setting the root of the application -->
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{request.script_root | tojson}};
+</script>
+
+<!-- loading our own js file -->
+<script src="{{url_for('static', filename = 'javascript/index.js')}}" charset="utf-8"></script>
+
+
 
 </html>
 

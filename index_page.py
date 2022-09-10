@@ -1,13 +1,8 @@
 from flask import Flask, render_template, jsonify, request
 import time
-# import RPI.GPIO as GPIO
 
 app = Flask(__name__)
-# GPIO.setmode(GPIO.BCM)
 app.config["run"] = True
-
-#don't forget to set GPIO as input/output
-# e.g. GPIO.setup(1, GPIO.OUT)
 
 @app.route("/")
 def main_page():
@@ -15,21 +10,38 @@ def main_page():
 
 @app.route('/_command')
 def command():
-    # your code here
-    print(request.args.get('command') + " was pressed!")
-    return jsonify(command=request.args.get('command'))
+    sent_command = request.args.get('command')
+    print(f"{sent_command} was pressed!")
+    if sent_command == "Pause":
+        app.config["run"] = False
+        time.sleep(600)
+    elif sent_command == "Run":
+        app.config["run"] = True
+    return jsonify(command=sent_command)
 
-@app.route("/Pause")
-def pause():
-    app.config["run"] = False
-    time.sleep(600)
-    return render_template("index.html")
+@app.route('/_tape-exfoliation')
+def tape_exfoliation():
+    print(f"Exfoliate Tape {request.args.get('times')} times")
+    app.config["tape_exfoliate"] = request.args.get('times')
+    return "200"
 
-@app.route("/Run")
-def run():
-    print(app.config["run"])
-    app.config["run"] = True
-    return render_template("index.html")
+@app.route('/_substrate-exfoliation')
+def substrate_exfoliation():
+    print(f"Exfoliate Substrate {request.args.get('times')} times")
+    app.config["substrate_exfoliate"] = request.args.get('times')
+    return "200"
 
+@app.route('/_substrate-no')
+def set_substrate_no():
+    print(f"Substrate no {request.args.get('value')} selected")
+    app.config["substrate_no"] = request.args.get('value')
+    return "200"
+
+@app.route('/_movement-speed')
+def set_movement_speed():
+    print(f"Movement Speed set to {request.args.get('value')}")
+    app.config["movement_speed"] = request.args.get('value')
+    return "200"
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
