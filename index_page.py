@@ -3,6 +3,7 @@ import time
 
 app = Flask(__name__)
 app.config["run"] = True
+app.config["progress"] = 0
 
 @app.route("/")
 def main_page():
@@ -43,5 +44,9 @@ def set_movement_speed():
     app.config["movement_speed"] = request.args.get('value')
     return "200"
     
+@app.route('/_progress')
+def get_progress():
+    return jsonify(value=app.config["progress"])
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

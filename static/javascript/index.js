@@ -37,3 +37,11 @@ $(function() {
   });
 
 });
+
+window.setInterval(function() {
+  $.getJSON($SCRIPT_ROOT + '/_progress', {
+    command: $(this).attr('id')
+  }, function(data) {
+    $("#Progress-Bar").val(data.value);
+  });
+}, 5000);
